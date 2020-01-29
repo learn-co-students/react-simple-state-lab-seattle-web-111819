@@ -1,17 +1,16 @@
-// import React, { Component } from 'react';
-import React from 'react';
-import Cell from './Cell.js' // STEP 4
+import React, { Component } from 'react'
+import Cell from './Cell.js' // STEP 3: create and import Cell component
 
- class Matrix extends React.Component {
+ class Matrix extends Component {
   
-  // STEP 3
+  // STEP 4: add Cell component return value prop
   genRow = (vals) => (
     // console.log(vals)
     vals.map(val => <Cell value={val} />)
     // vals.map(val => <div className="cell"></div>) // replace me and render a cell component instead!
   )
   
-  // STEP 2
+  // STEP 1: console.log() genMatrix to check values
   // genMatrix in an instance method which maps "this.props.values" to an array of JSX
   // Every row in "this.props.values" will create a <div className="row">
   genMatrix = () => (
@@ -29,7 +28,7 @@ import Cell from './Cell.js' // STEP 4
   
 }
 
-// STEP 1
+// STEP 2: add defaultProps
 Matrix.defaultProps = {
   values: (() => {
     const row = ['#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00', '#F00']
@@ -37,4 +36,4 @@ Matrix.defaultProps = {
   }) ()
 }
 
-export default Matrix;
+export default Matrix
